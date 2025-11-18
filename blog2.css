@@ -1,0 +1,252 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: rgb(250, 250, 250);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.site-header {
+  background: linear-gradient(90deg,#fafbfc ,#f8fafa, #fafdfd);
+  color: rgb(4, 4, 4);
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  
+}
+
+.logo {
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.logo img {
+    width: 50px; 
+    height: 50px; 
+    margin-right: 5px;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-top: 0px;
+}
+
+/* NAVIGATION */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  margin-right: 8%;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+  margin-top: 0px;
+}
+
+.nav ul li a {
+  color: rgb(13, 161, 254);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #1d93fa;
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background-position: center;
+}
+
+.featured-banner {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  filter: brightness(75%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px 40px;
+  border-radius: 15px;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  background: #00c6ff;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.read-more-btn:hover {
+  background: #007a91;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* BLOG POST */
+.blog-post {
+  background: white;
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+
+}
+
+.post-title {
+  font-size: 1.8rem;
+  color: #088da8;
+  text-align: center;
+}
+
+/* IMAGES */
+.hover-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.hover-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 130%;
+  height: 100%;
+}
+
+.widget h3 {
+  text-align: center;
+  background: linear-gradient(90deg, #00c6ff, #007a91);
+  color: white;
+  padding: 10px 0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.sidebar .medium-img {
+  width: 100%;
+  height: auto;
+  display:flex;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #007a91;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+#backToTop:hover {
+  background: #00c6ff;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #007a91;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+  background: #1c1c1c;
+}
+
+body.dark-mode .blog-post,
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* TOGGLE SWITCH */
+.toggle-switch {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.toggle-switch label {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
