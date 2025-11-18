@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Minimal Tech Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Minimal tech-themed portfolio — temporary content." />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#home">Tech<span class="dot">•</span>Portfolio</a>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#more">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-text">
+              <h1>Hi — I'm a Technology Enthusiast</h1>
+              <p class="lead">I build minimal, reliable interfaces and small utilities. This is temporary placeholder content for a simple portfolio.</p>
+              <p><a class="btn" href="#projects">View projects</a></p>
+            </div>
+            <div class="avatar-wrap">
+              <div class="avatar" id="avatar-placeholder" title="Replace this with your photo">
+                <!-- Inline SVG placeholder: replace with an <img> referencing your image (example: <img src="me.jpg" alt="Your name">) -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar placeholder">
+                  <rect width="100" height="100" rx="20" fill="#071016"></rect>
+                  <g fill="#4ef08a" opacity="0.95">
+                    <circle cx="50" cy="34" r="16"></circle>
+                    <rect x="20" y="60" width="60" height="16" rx="6"></rect>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="panel">
+        <div class="container">
+          <h2>About</h2>
+          <p>Temporary bio: I work with web technologies, automation, and cloud tooling. Comfortable with JavaScript, HTML, CSS, and small full‑stack projects. This section will be updated with real details.</p>
+          <ul class="skills">
+            <li>Frontend: HTML, CSS, JS</li>
+            <li>Tools: Git, CI, Docker</li>
+            <li>Interests: UX, performance, developer tools</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" class="panel">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Project Alpha</h3>
+              <p>Small utility demonstrating a focused feature. (Placeholder)</p>
+            </article>
+            <article class="card">
+              <h3>Project Beta</h3>
+              <p>Experiment in tooling and automation. (Placeholder)</p>
+            </article>
+            <article class="card">
+              <h3>Project Gamma</h3>
+              <p>Design system snippets and tokens. (Placeholder)</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="panel contact-panel">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>If you'd like to reach out, use the form below (front-end demo only).</p>
+          <form id="contact-form" class="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Short message" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Send</button>
+              <button type="button" id="copy-email" class="btn alt">Copy email</button>
+            </div>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="more" class="panel">
+        <div class="container">
+          <h2>More</h2>
+          <p>Links, publications, and other resources will go here. For now, this is a simple placeholder.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 Tech Portfolio — placeholder content</small>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
