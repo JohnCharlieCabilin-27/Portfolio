@@ -15,13 +15,16 @@ body {
 
 /* HEADER */
 .site-header {
-  background: linear-gradient(90deg,#fafbfc ,#f8fafa, #fafdfd);
-  color: rgb(4, 4, 4);
-  padding: 1.5rem 0;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  height: 100px;
-  
+    height: 80px;
+    display: flex;
+    align-items: center;    /* vertical center logo, nav and toggle */
+    gap: 16px;
+    padding: 6px 20px;
+    justify-content: space-between;
+    font-size: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    z-index: 50;
+    background: rgba(255,255,255,0.95); /* keep header readable */
 }
 
 .logo {
@@ -32,8 +35,9 @@ body {
 }
 
 .logo img {
-    width: 50px; 
-    height: 50px; 
+    height: 40px;
+    width: auto;
+    display: block;
     margin-right: 5px;
     border-radius: 5px; 
     object-fit: cover; 
@@ -41,62 +45,92 @@ body {
 }
 
 /* NAVIGATION */
+.nav {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ensure nav list aligns to the right */
 .nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: right;
-  margin-right: 8%;
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
 }
 
-.nav ul li {
+.nav li {
+  margin: 0;
+}
+
+.nav a {
   display: inline-block;
-  margin: 0 15px;
-  margin-top: 0px;
-}
-
-.nav ul li a {
-  color: rgb(13, 161, 254);
+  padding: 8px 10px;
+  color: #222; /* adjust color to match header theme */
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
-.nav ul li a:hover {
-  color: #1d93fa;
-  border-bottom: 2px solid white;
-  padding-bottom: 3px;
+.nav a:hover,
+.nav a:focus {
+  background: rgba(0,0,0,0.06);
+  color: #000;
 }
 
 /* HERO SECTION */
 .hero {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  background-position: center;
+    position: relative;
+    height: 60vh;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000; /* fallback while image loads */
 }
 
 .featured-banner {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  filter: brightness(75%);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* crop while preserving aspect ratio */
+    object-position: center; /* center the focal point */
+    display: block;
+    filter: brightness(1.06) contrast(1.08) saturate(1.05);
+    transform: scale(1.02);  /* slight upscale to avoid thin edges when centering */
+    z-index: 0;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 30px 40px;
-  border-radius: 15px;
-  max-width: 700px;
+/* Optional reduced dark overlay so image is clearer — lower alpha to make image brighter */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.18); /* reduce or set to 0 to remove overlay entirely */
+    z-index: 1;
+    pointer-events: none;
 }
 
-.hero-content h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* Keep hero text above image/overlay and center it */
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    max-width: 1100px;
+}
+
+/* Improve heading readability on lighter images */
+.hero .hero-content h1 {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    margin: 0 0 10px;
 }
 
 .hero-content p {
@@ -104,17 +138,16 @@ body {
   margin-bottom: 20px;
 }
 
+/* Read more button visibility */
 .read-more-btn {
-  background: #00c6ff;
-  color: white;
-  padding: 10px 25px;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background 0.3s;
-}
-
-.read-more-btn:hover {
-  background: #007a91;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
 }
 
 /* CONTAINER */
@@ -234,9 +267,10 @@ body.dark-mode .sidebar {
 
 /* TOGGLE SWITCH */
 .toggle-switch {
-  position: absolute;
-  top: 15px;
-  right: 20px;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-left: 12px;
 }
 
 .toggle-switch label {
@@ -250,3 +284,24 @@ body.dark-mode .sidebar {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+    .site-header { height: 48px; padding: 6px 12px; }
+    .site-header .logo img { height: 32px; }
+    .hero { height: 45vh; min-height: 220px; }
+    .hero .hero-content h1 { font-size: 1.4rem; }
+}
+
+/* Small screen: stack or collapse more compactly */
+@media (max-width: 640px) {
+    .nav ul {
+        gap: 10px;
+    }
+    .nav a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+}
+
+/* Optional: ensure backToTop button hidden by default until JS shows it */
+#backToTop { display: none; }
