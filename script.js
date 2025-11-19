@@ -80,4 +80,34 @@
     });
   }
 
+  // Skill progress animation and percent pill coloring
+  function initSkills(){
+    const skills = document.querySelectorAll('.skill');
+    skills.forEach(s => {
+      const progress = s.querySelector('.progress');
+      const fill = s.querySelector('.progress-fill');
+      const percentEl = s.querySelector('.skill-percent');
+      const pct = parseInt(progress.getAttribute('data-percent') || progress.getAttribute('aria-valuenow') || '0', 10);
+      // set accessible value
+      progress.setAttribute('aria-valuenow', String(pct));
+      // animate from 0 to percent
+      fill.style.width = '0%';
+      // delay to allow paint
+      setTimeout(() => { fill.style.width = pct + '%'; }, 80);
+      // set percent text
+      if (percentEl) percentEl.textContent = pct + '%';
+      // color the pill
+      if (percentEl) {
+        percentEl.classList.remove('percent-high','percent-mid','percent-low');
+        if (pct >= 75) percentEl.classList.add('percent-high');
+        else if (pct >= 50) percentEl.classList.add('percent-mid');
+        else percentEl.classList.add('percent-low');
+      }
+    });
+  }
+
+  // init on load
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSkills);
+  else initSkills();
+
 })();
