@@ -40,6 +40,12 @@ body{
 .hero-text{flex:1}
 .avatar-wrap{flex:0 0 200px;display:flex;justify-content:center}
 .avatar{width:200px;height:200px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(78,240,138,0.09),rgba(78,240,138,0.03));border:2px solid rgba(78,240,138,0.12);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.avatar svg{width:72%;height:72%;display:block}
+.avatar-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-grid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;text-align:center}
+.hero-text{flex:unset}
+.avatar-wrap{flex:0 0 220px;display:flex;justify-content:center;margin-top:.25rem}
+.avatar{width:220px;height:220px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(78,240,138,0.09),rgba(78,240,138,0.03));border:2px solid rgba(78,240,138,0.12);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
 .avatar-img{width:100%;height:100%;object-fit:cover;display:block}
 
 
@@ -55,11 +61,35 @@ body{
 .about-block h4{margin:0.6rem 0 .4rem;color:var(--muted)}
 .skill-categories{margin:0 0 0.6rem 1rem;color:var(--muted)}
 
-.skill{display:grid;grid-template-columns:140px 1fr 64px;gap:12px;align-items:center;margin-top:.85rem;padding:.45rem .6rem;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-.skill-label{font-weight:700;color:var(--muted);font-size:1rem}
-.progress{height:14px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#2fe87a);box-shadow:0 6px 18px rgba(46,200,120,0.08);border-radius:999px}
-.skill-percent{width:64px;text-align:center;color:#061017;font-weight:700;background:var(--accent);border-radius:999px;padding:.25rem .4rem}
+.skill{display:flex;align-items:center;gap:.75rem;margin-top:.6rem}
+.skill-label{width:80px;font-weight:600;color:var(--muted);font-size:.95rem}
+.progress{flex:1;height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#2fe87a);box-shadow:0 6px 18px rgba(46,200,120,0.08)}
+.skill-percent{width:48px;text-align:right;color:var(--muted);font-weight:600}
+
+/* percent pill color states */
+.skill-percent.percent-high{background:#4ef08a;color:#061017}
+.skill-percent.percent-mid{background:#ffd166;color:#061017}
+.skill-percent.percent-low{background:#9aa6ad;color:#061017}
+
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#2fe87a);box-shadow:0 6px 18px rgba(46,200,120,0.08);transition:width 700ms cubic-bezier(.2,.9,.2,1)}
+
+/* Make each about block look more like a card */
+.about-block{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 24px rgba(2,6,10,0.6);padding:1.25rem;border-radius:12px;border:1px solid rgba(78,240,138,0.06)}
+.about-block ul{margin-left:1.05rem}
+
+/* Desktop: center About content in the About section (no right-side sticky column) */
+@media (min-width:1000px){
+  /* keep hero full-width and tall */
+  .hero{min-height:80vh;padding-top:3rem;padding-bottom:3rem}
+
+  /* center the About column and display blocks as a two-column grid */
+  #about .container{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;align-items:start;padding:2rem}
+  /* Make the section title span both columns */
+  #about .container > h2{grid-column:1/-1;margin-bottom:0.6rem}
+  /* ensure each about-block fills its grid cell and spacing is consistent */
+  #about .about-block{margin:0}
+}
 
 .contact-panel .contact-form{max-width:720px}
 .contact-form label{display:block;margin-top:1rem;font-size:.9rem;color:var(--muted)}
@@ -75,9 +105,9 @@ body{
   .primary-nav{position:absolute;right:1rem;top:60px;background:#091216;border-radius:8px;padding:.75rem;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
   .primary-nav[aria-hidden="false"]{display:block}
   .primary-nav ul{flex-direction:column}
-   .avatar-wrap{flex:0 0 150px;margin-bottom:1rem}
+  .hero-grid{flex-direction:column-reverse;text-align:center}
+  .avatar-wrap{flex:0 0 150px;margin-bottom:1rem}
   .avatar{width:150px;height:150px}
-  .skill{grid-template-columns:110px 1fr 56px;padding:.35rem .5rem}
 }
 
 @media (prefers-reduced-motion: no-preference){
