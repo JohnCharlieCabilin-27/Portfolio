@@ -38,9 +38,9 @@ body{
 /* Avatar / hero layout */
 .hero-grid{display:flex;align-items:center;gap:2rem}
 .hero-text{flex:1}
-.avatar-wrap{flex:0 0 140px;display:flex;justify-content:center}
-.avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(78,240,138,0.09),rgba(78,240,138,0.03));border:1px solid rgba(78,240,138,0.12);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-.avatar svg{width:72%;height:72%;display:block}
+.avatar-wrap{flex:0 0 200px;display:flex;justify-content:center}
+.avatar{width:200px;height:200px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(78,240,138,0.09),rgba(78,240,138,0.03));border:2px solid rgba(78,240,138,0.12);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.avatar-img{width:100%;height:100%;object-fit:cover;display:block}
 
 
 .panel{padding:3rem 0}
@@ -63,8 +63,8 @@ body{
   .primary-nav{position:absolute;right:1rem;top:60px;background:#091216;border-radius:8px;padding:.75rem;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
   .primary-nav[aria-hidden="false"]{display:block}
   .primary-nav ul{flex-direction:column}
-  .hero-grid{flex-direction:column-reverse;text-align:center}
-  .avatar-wrap{flex:0 0 110px;margin-bottom:1rem}
+   .avatar-wrap{flex:0 0 150px;margin-bottom:1rem}
+  .avatar{width:150px;height:150px}
 }
 
 @media (prefers-reduced-motion: no-preference){
