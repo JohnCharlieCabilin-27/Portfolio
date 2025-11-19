@@ -49,6 +49,18 @@ body{
 .card{background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
 .skills{margin:0;padding-left:1.1rem;color:var(--muted)}
 
+/* About section enhancements */
+.about-block{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:1.1rem;border-radius:10px;margin-bottom:1rem;border:1px solid rgba(255,255,255,0.02)}
+.about-block h3{margin:0 0 .6rem;color:var(--accent);font-family:var(--mono)}
+.about-block h4{margin:0.6rem 0 .4rem;color:var(--muted)}
+.skill-categories{margin:0 0 0.6rem 1rem;color:var(--muted)}
+
+.skill{display:flex;align-items:center;gap:.75rem;margin-top:.6rem}
+.skill-label{width:80px;font-weight:600;color:var(--muted);font-size:.95rem}
+.progress{flex:1;height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#2fe87a);box-shadow:0 6px 18px rgba(46,200,120,0.08)}
+.skill-percent{width:48px;text-align:right;color:var(--muted);font-weight:600}
+
 .contact-panel .contact-form{max-width:720px}
 .contact-form label{display:block;margin-top:1rem;font-size:.9rem;color:var(--muted)}
 .contact-form input,.contact-form textarea{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
