@@ -78,6 +78,15 @@ body{
 .about-block{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 24px rgba(2,6,10,0.6);padding:1.25rem;border-radius:12px;border:1px solid rgba(78,240,138,0.06)}
 .about-block ul{margin-left:1.05rem}
 
+/* Proficiency block layout */
+.proficiency-block{display:block}
+.proficiency-grid{display:grid;grid-template-columns:1fr;gap:0.75rem;margin-top:0.6rem}
+.proficiency-grid .skill{margin:0;padding:.5rem;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+
+@media (min-width:800px){
+  .proficiency-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 /* Desktop: center About content in the About section (no right-side sticky column) */
 @media (min-width:1000px){
   /* keep hero full-width and tall */
