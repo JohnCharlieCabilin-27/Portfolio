@@ -92,6 +92,12 @@ body{
   /* keep hero full-width and tall */
   .hero{min-height:80vh;padding-top:3rem;padding-bottom:3rem}
 
+  /* Hero: place intro text left and avatar to the right */
+  .hero-grid{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
+  .hero-text{flex:1;padding-right:1rem}
+  .avatar-wrap{flex:0 0 260px;justify-content:flex-end;margin-top:0}
+  .avatar{width:220px;height:220px}
+
   /* center the About column and display blocks as a two-column grid */
   #about .container{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;align-items:start;padding:2rem}
   /* Make the section title span both columns */
@@ -99,6 +105,11 @@ body{
   /* ensure each about-block fills its grid cell and spacing is consistent */
   #about .about-block{margin:0}
 }
+
+/* Tidy border colors for consistency */
+.about-block{border:1px solid rgba(78,240,138,0.06)}
+.proficiency-block{border:1px solid rgba(78,240,138,0.05)}
+.proficiency-grid .skill{border:1px solid rgba(255,255,255,0.03)}
 
 .contact-panel .contact-form{max-width:720px}
 .contact-form label{display:block;margin-top:1rem;font-size:.9rem;color:var(--muted)}
