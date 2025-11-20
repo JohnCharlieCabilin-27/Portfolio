@@ -111,6 +111,20 @@ body{
 .proficiency-block{border:1px solid rgba(78,240,138,0.05)}
 .proficiency-grid .skill{border:1px solid rgba(255,255,255,0.03)}
 
+/* Small inline proficiency box (used under Academic and Skills sections) */
+.proficiency-inline{margin-top:.8rem;padding:.6rem;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(78,240,138,0.05);max-width:420px}
+.proficiency-inline strong{display:block;margin-bottom:.45rem;color:var(--accent);font-family:var(--mono)}
+.proficiency-list{list-style:none;padding:0;margin:0}
+.proficiency-list li{padding:.35rem 0;border-top:1px dashed rgba(255,255,255,0.02)}
+.proficiency-list li:first-child{border-top:0}
+.prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem}
+.prog-name{color:var(--muted);font-weight:600}
+.prog-percent{font-weight:700;color:#061017;background:var(--accent);padding:.18rem .45rem;border-radius:999px}
+
+/* Inline progress line */
+.inline-progress{height:8px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+.inline-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#2fe87a);transition:width 700ms cubic-bezier(.2,.9,.2,1)}
+
 .contact-panel .contact-form{max-width:720px}
 .contact-form label{display:block;margin-top:1rem;font-size:.9rem;color:var(--muted)}
 .contact-form input,.contact-form textarea{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}

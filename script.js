@@ -106,8 +106,31 @@
     });
   }
 
+  // Animate inline proficiency line bars inside .proficiency-list
+  function initInlineProficiency(){
+    const items = document.querySelectorAll('.proficiency-list li');
+    items.forEach(li => {
+      const pct = parseInt(li.getAttribute('data-percent') || '0', 10);
+      const fill = li.querySelector('.inline-progress-fill');
+      const percentEl = li.querySelector('.prog-percent');
+      if (fill) {
+        fill.style.width = '0%';
+        setTimeout(() => { fill.style.width = pct + '%'; }, 120);
+      }
+      if (percentEl) {
+        percentEl.textContent = pct + '%';
+        percentEl.classList.remove('percent-high','percent-mid','percent-low');
+        if (pct >= 75) percentEl.classList.add('percent-high');
+        else if (pct >= 50) percentEl.classList.add('percent-mid');
+        else percentEl.classList.add('percent-low');
+      }
+    });
+  }
+
   // init on load
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSkills);
   else initSkills();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initInlineProficiency);
+  else initInlineProficiency();
 
 })();
