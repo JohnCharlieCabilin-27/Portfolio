@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — Minimal Tech Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Projects — Minimal tech-themed portfolio." />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">My<span class="dot">•</span>Portfolio</a>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="more.html">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="projects" class="panel">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Project in C Language</h3>
+              <p>These projects helped me practice calculations, user input handling, and applying basic programming logic.</p>
+              <ul>
+                <li>BMI Computation System</li>
+                <li>General Average Calculator</li>
+                <li>Temperature Converter</li>
+              </ul>
+              <p><a class="repo-link" href="https://github.com/JohnCharlieCabilin-27/Clanguage.git" target="_blank" rel="noopener">View C project on GitHub</a></p>
+            </article>
+            <article class="card">
+              <h3>Project in HTML</h3>
+              <p>These projects helped me practice structuring web pages, designing layouts, and implementing basic interactivity while strengthening my web development skills.</p>
+              <ul>
+                <li>Log-in and Sign-up Pages</li>
+                <li>Local Tourism Website</li>
+                <li>Portfolio Website</li>
+              </ul>
+              <p><a class="repo-link" href="https://github.com/JohnCharlieCabilin-27/blogwebsite.git" target="_blank" rel="noopener">View HTML project on GitHub</a></p>
+            </article>
+            <article class="card">
+              <h3>Project Showcase</h3>
+              <div class="image-showcase">
+                <video controls poster="https://via.placeholder.com/800x600/0f1416/4ef08a?text=Video+Poster" preload="metadata">
+                  <source src="assets/showcase.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p style="margin-top:1rem;color:var(--muted);font-size:0.9rem">Replace the video source with your MP4 (put it in `assets/showcase.mp4` or update the `src`).</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 Tech Portfolio — placeholder content</small>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
