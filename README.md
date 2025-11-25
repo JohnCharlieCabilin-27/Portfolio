@@ -1,4 +1,4 @@
-# John Charlie Cabilin  Tech Portfolio
+# John Charlie Cabilin Portfolio
 
 A minimal, responsive, and interactive tech-themed portfolio showcasing academic background, skills, projects, and contact information.
 
