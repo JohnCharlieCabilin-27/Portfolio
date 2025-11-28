@@ -6,13 +6,23 @@
   const sections = Array.from(document.querySelectorAll('main section'));
 
   function setNavVisibility(open){
-    navToggle.setAttribute('aria-expanded', open);
-    nav.setAttribute('aria-hidden', !open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
   }
+
+  // Initialize nav as closed on page load
+  setNavVisibility(false);
 
   navToggle.addEventListener('click', () => {
     const open = navToggle.getAttribute('aria-expanded') === 'true';
     setNavVisibility(!open);
+  });
+
+  // Close nav when a nav link is clicked (for both internal and external links)
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setNavVisibility(false);
+    });
   });
 
   // Smooth scroll for internal links
